@@ -1,0 +1,31 @@
+import React, {useState, useEffect} from "react";
+import Card from "@mui/material/Card";
+import {Button} from "@mui/material";
+
+const Timer = () => {
+    const [seconds,setSeconds] = useState(0);
+    const [isActive,setisActive] = useState(false);
+
+    const toggle = () => setisActive(!isActive);
+
+    useEffect(() => {
+        let interval = null;
+        if(isActive && !interval){
+            interval = setInterval(() => setSeconds(seconds+1),1000)
+        }else if(!isActive && seconds !== 0) {
+            clearInterval(interval)
+        }
+        return () => clearInterval(interval);
+        },[isActive,seconds])
+
+    return (
+        <div>
+            <Card variant = "outlined" style={{ display:'flex', justifyContent:'center', alignItems:"center", minHeight : "5vh", backgroundColor: "#9a9a9a" }}>
+                Timer: {seconds} </Card>
+            <Button onClick={toggle}>{isActive ? 'Stop': 'Start'}</Button>
+        </div>
+    )
+
+}
+
+export default Timer;

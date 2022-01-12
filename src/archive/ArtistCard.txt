@@ -1,0 +1,26 @@
+import Card from '@mui/material/Card';
+import {ButtonBase, CardContent, CardMedia, Typography} from "@mui/material";
+
+const ArtistCard = (props) => {
+    return (
+        <ButtonBase>
+        <div style={{maxWidth: props.maxWidth}}>
+    <Card sx = {{maxWidth: props.maxWidth}}>
+        <CardMedia
+          component="img"
+          height={props.maxWidth}
+          image= {props.imgSrc} />
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+                Poets of the fall
+        </Typography>
+            Followers: {props.followers}
+        </CardContent>
+    </Card>
+        </div>
+        </ButtonBase>
+    )
+    // // "https://i.scdn.co/image/ab6761610000f178a25560f124192bc185a5358f"
+}
+
+export default ArtistCard;

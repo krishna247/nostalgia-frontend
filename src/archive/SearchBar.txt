@@ -1,0 +1,43 @@
+import {Autocomplete, TextField} from "@mui/material";
+import * as React from 'react';
+import getCookie from "../utils";
+
+const getSuggestions = (query) => {
+    let resp;
+    let songsList = [];
+    fetch(`http://localhost:8080/search/track?query=${query}`,{credentials:'include'})
+        .then(response=> resp=response.json())
+        .then(tracks=> tracks.forEach(track => songsList.push(track.Name + ' - ' + track.Artists)));
+    return songsList;
+}
+
+const SearchBar = () => {
+    const [options, setOptions] = React.useState(['A','B','C']);
+    const [inputValue, setInputValue] = React.useState('');
+    const [value, setValue] = React.useState(null);
+
+    return (
+        <Autocomplete
+            id="search"
+            sx = {{width: 300}}
+            options = {options}
+            value={value}
+            renderInput={(params) => <TextField {...params} label="Search for tracks" fullWidth />}
+            onInputChange= {(event, newInputValue) => {
+                console.log(newInputValue);
+                setInputValue(newInputValue);
+            }}
+            onChange={(event, newValue) => {
+                setOptions(newValue ? [newValue, ...options] : options);
+                console.log(`newValue:${newValue}`);
+                let newSuggestions = getSuggestions(newValue);
+                console.log(`newSuggestions: ${newSuggestions}`);
+                setOptions(newSuggestions);
+                setValue(newValue);
+            }}
+    />
+    )
+
+}
+
+export default SearchBar;
