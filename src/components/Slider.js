@@ -2,6 +2,7 @@ import {Box, SliderThumb, styled} from "@mui/material";
 
 function AirbnbThumbComponent(props) {
     const { children, ...other } = props;
+
     return (
         <SliderThumb {...other}>
             {children}
