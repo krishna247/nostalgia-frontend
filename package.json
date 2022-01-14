@@ -5,6 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@fontsource/dancing-script": "^4.5.1",
+    "@fontsource/roboto": "^4.5.1",
     "@mui/material": "^5.2.6",
     "@mui/x-data-grid": "^5.2.2",
     "@testing-library/jest-dom": "^5.16.1",
