@@ -1,39 +1,27 @@
 import "@fontsource/roboto"
 import "@fontsource/dancing-script"
+import "@fontsource/quicksand";
 import spotifyLogo from '../assets/Spotify_Logo_RGB_Green.png'
-import {Box, Typography} from "@mui/material";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import {Box, Container, Grid, Stack, Typography} from "@mui/material";
+import {ThemeProvider, createTheme} from '@mui/material/styles';
+import {Fragment} from "react";
 
-
-const robotoTheme = createTheme({
-    typography: {
-        "fontFamily": `"Roboto", "Helvetica", "Arial", sans-serif`,
-        "fontSize": 14,
-        color: "pink"
-
-    }
-});
-
-const dancingScriptTheme = createTheme({
-    typography: {
-            fontFamily: "Dancing Script",
-            color: "pink"
-            },
-    palette: {
-        text:{
-            primary: "#FFFFFF"
-        }
-    }
-});
 
 const Header = (props) => {
     return (
-        <Box sx={{justifyContent:"space-between"}}>
-            <ThemeProvider theme={dancingScriptTheme}>
-                App Name
-            </ThemeProvider>
-        <img src={spotifyLogo} width="100"/>
-        </Box>
+        <Fragment>
+        <Stack direction="row" justifyContent="space-between">
+            <Box sx={{fontFamily: 'Dancing Script', fontSize: 'h2.fontSize', color: "white"}}>
+                Koishii
+            </Box>
+            <img src={spotifyLogo} width="220em"/>
+        </Stack>
+                <Box sx={{fontFamily: 'Quicksand', fontSize: 'h5.fontSize', color: "#1DB954",textUnderlineOffset:"4"}}>
+                    <span style = {{borderBottom: "2px solid currentColor",lineHeight: 0.8}}>
+                    Rediscover old songs by choosing a timeline
+                        </span>
+            </Box>
+        </Fragment>
     )
 }
 
