@@ -2,9 +2,11 @@ import {Button} from "@mui/material";
 import HomePage from "./HomePage";
 
 const getSpotifyUserLogin = () => {
-    fetch("http://localhost:8080/auth")
+
+    fetch("http://localhost:8080/auth", )
         .then((response) => response.text())
         .then(response => {
+            console.log('Redirect: '+response.toString())
             window.location.replace(response);
         })
 }
@@ -12,6 +14,7 @@ const getSpotifyUserLogin = () => {
 
 const HomePageBase = () => {
     const checkCookie = document.cookie.indexOf("access_token")
+
     console.log(checkCookie)
         if(checkCookie === -1){
             return (

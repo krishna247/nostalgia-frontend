@@ -1,10 +1,21 @@
 import {Box, ButtonBase, Card, CardActionArea, CardContent, CardMedia, Grid, Stack, Typography} from "@mui/material";
 
+function onCardHover(){
+    const audioElement = document.getElementById("htmlAudio")
+    audioElement.play()
+}
+
+function onCardUnhover(){
+    const audioElement = document.getElementById("htmlAudio")
+    audioElement.pause()
+}
+
+
 const songCard = (props) => {
     return (
     <ButtonBase>
-        <div style={{width: '300px'}}>
-            <Card elevation={20} sx={{backgroundColor : "#515151"}}>
+        <div style={{width: "32em" }}>
+            <Card elevation={20} sx={{backgroundColor : "#515151", borderRadius: "8px"}} onMouseOver={onCardHover} onMouseOut={onCardUnhover}>
             <Grid container>
                 <Grid item width={"100px"}>
                 <CardMedia
@@ -14,18 +25,18 @@ const songCard = (props) => {
                     sx = {{padding:"15px"}}/>
                 </Grid>
                 <Grid item>
-                <CardContent sx={{marginLeft:"15px"}}>
-                    <Typography gutterBottom variant="h5" component="div" color={"common.white"} sx={{fontWeight: 600,marginBottom:"0",textAlign:"left" }}>
+                <CardContent sx={{marginLeft:"20px", textAlign: "left"}}>
+                    <Typography noWrap={true} gutterBottom variant="h5" component="div" color={"common.white"} sx={{fontWeight: 600,marginBottom:"0",textAlign:"left" }}>
                         {props.name}
                     </Typography>
-                    <Typography color="#1DB954" sx = {{textAlign:"left"}}>
+                    <Typography noWrap={true} color="#1DB954">
                     {props.artist}
                     </Typography>
-                </CardContent>
-                    <Typography marginLeft="29px" color="white">
+
+                    <Typography noWrap={true} color="white" marginTop="10px" marginLeft="20px">
                         Added on {props.addedOn}
                     </Typography>
-
+                </CardContent>
                 </Grid>
             </Grid>
             </Card>

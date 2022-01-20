@@ -8,5 +8,19 @@ function getCookie(name) {
     }
     return null;
 }
+export const compareYear = (row,yearsVal) => {
 
-export default getCookie;
+    const minYear = yearsVal[0]
+    const maxYear = yearsVal[1]
+    let currentYear = "2" + new Date(Number(row['addedAt'])).getYear() -100
+    return currentYear >= minYear && currentYear <= maxYear
+};
+
+export const modifyRows = (row) => {
+    console.log('modify rows')
+    row['addedAt'] = new Date(Number(row['addedAt']))
+    return row
+}
+
+
+export default {getCookie, compareYear, modifyRows};

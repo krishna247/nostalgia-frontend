@@ -1,0 +1,19 @@
+.MuiSlider-track {
+    color:#1DB954;
+    height: 1px !important;
+}
+
+.MuiSlider-thumbColorPrimary{
+    color:#1DB954
+}
+
+.MuiSlider-rail {
+    color:#1DB954
+}
+
+.MuiSlider-markLabel{
+    color:white !important;
+    font-family: "Roboto Slab" !important;
+    /*font-weight: bold !important;*/
+    font-size: 1.5em !important;
+}
