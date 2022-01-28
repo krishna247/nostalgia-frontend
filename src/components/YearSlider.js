@@ -1,5 +1,6 @@
-import {useState} from "react";
 import {Box, Slider} from "@mui/material";
+import './Slider.css'
+
 
 const marks = [
     {value: 2008,label: '2009'},
