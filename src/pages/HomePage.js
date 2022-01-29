@@ -2,7 +2,7 @@ import CardList from "../components/CardList";
 import Header from "../components/Header";
 import YearSlider from "../components/YearSlider";
 import {useState} from "react";
-import AudioPlay from "../components/audioPlay";
+import MonthStepper from "../components/MonthStepper";
 
 const HomePage = () => {
     const [years, setYears] = useState([2021, 2022]);
@@ -18,11 +18,11 @@ const HomePage = () => {
     return (
         <div>
             <Header/>
-            <AudioPlay/>
+            {/*<AudioPlay/>*/}
 
             {/*<TimeSlider/>*/}
             <YearSlider yearsVal={years} setYearsVal={setYears}/>
-            {/*<SavedTracksDataGrid yearsVal={years}/>*/}
+            {/*<MonthStepper/>*/}
             <CardList yearsVal={years}/>
             {/*<SongCard maxWidth={400} name={cardInfo.name} artist={cardInfo.artist} addedOn={new Date(Number(cardInfo.addedAt)).toDateString()} img={cardInfo.albumArt} />*/}
             {/*<SongCard maxWidth={400} name="Name" artist="Artist" addedOn="Jan 1 2021" img="https://i.scdn.co/image/ab67616d0000b273d27f8a33b8a8c0417cdca53f"/>*/}

@@ -1,20 +1,23 @@
-import {Box, ButtonBase, Card, CardActionArea, CardContent, CardMedia, Grid, Stack, Typography} from "@mui/material";
-
-function onCardHover(){
-    const audioElement = document.getElementById("htmlAudio")
-    audioElement.play()
-}
-
-function onCardUnhover(){
-    const audioElement = document.getElementById("htmlAudio")
-    audioElement.pause()
-}
-
+import {ButtonBase, Card, CardContent, CardMedia, Grid, Typography} from "@mui/material";
 
 const songCard = (props) => {
+    const onCardHover = () => {
+        const audioElement = document.getElementById(props.uri)
+        // setTimeout( () => audioElement.play(),1000)
+        audioElement.play()
+    }
+
+    const onCardUnhover = () => {
+        console.log(props)
+        const audioElement = document.getElementById(props.uri)
+        audioElement.pause()
+    }
+
+
     return (
     <ButtonBase>
         <div style={{width: "32em" }}>
+            <audio id={props.uri} src={props.preview_url}/>
             <Card elevation={20} sx={{backgroundColor : "#515151", borderRadius: "8px"}} onMouseOver={onCardHover} onMouseOut={onCardUnhover}>
             <Grid container>
                 <Grid item width={"100px"}>
