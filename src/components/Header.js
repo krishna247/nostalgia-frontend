@@ -13,9 +13,9 @@ const Header = (props) => {
             <Box sx={{fontFamily: 'Dancing Script', fontSize: 'h2.fontSize', color: "white"}}>
                 Koishii
             </Box>
-            <img src={spotifyLogo} width="220em"/>
+            <img src={spotifyLogo} style={{maxWidth: "20%", height: "20%", paddingRight:"16px"}}/>
         </Stack>
-                <Box sx={{fontFamily: 'Roboto Slab', fontSize: 30, color: "#1DB954",textUnderlineOffset:"4"}}>
+                <Box sx={{fontFamily: 'Roboto Slab', fontSize: 25, color: "#1DB954",textUnderlineOffset:"4"}}>
                     <span style = {{borderBottom: "1px solid currentColor",lineHeight: 0.8}}>
                     Rediscover old songs by choosing a timeline
                         </span>

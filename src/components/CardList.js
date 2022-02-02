@@ -23,7 +23,7 @@ const CardList = (props) => {
     return (
 
     // <Box style ={{display: 'flex',  direction : "row", justifyContent : "space-around" }}>
-        <Masonry columns={3} spacing={4}>
+        <Masonry columns={2} spacing={3}>
 
         {cardContents.map(content =>
             <SongCard maxWidth={160} key={content.uri} name={content.name} artist={content.artist} preview_url={content.preview_url} img={content.albumArt} uri={content.uri} addedOn={new Date(Number(content.addedAt)).toDateString()}/>

@@ -27,7 +27,7 @@ const YearSlider = (props) => {
         props.setYearsVal(newValue);
     };
     return(
-        <Box sx={{ width: 950, marginLeft:10, marginTop: 4 }}>
+        <Box sx={{ width: "60%", marginLeft:10, marginTop: 4 }}>
             <Slider
                 // getAriaLabel={() => 'Temperature range'}
                 // getAriaLabel = {(val) => val}

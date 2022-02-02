@@ -17,8 +17,10 @@ export const compareYear = (row,yearsVal) => {
 };
 
 export const modifyRows = (row) => {
-    console.log('modify rows')
-    row['addedAt'] = new Date(Number(row['addedAt']))
+    const date = new Date(Number(row['addedAt']))
+    row['addedAt'] = date
+    const splits = date.toDateString().split(' ')
+    row['monthYear'] = splits[1] + ' ' + splits[3]
     return row
 }
 

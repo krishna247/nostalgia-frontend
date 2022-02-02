@@ -1,18 +1,9 @@
 import {ButtonBase, Card, CardContent, CardMedia, Grid, Typography} from "@mui/material";
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
 const songCard = (props) => {
-    const onCardHover = () => {
-        const audioElement = document.getElementById(props.uri)
-        // setTimeout( () => audioElement.play(),1000)
-        audioElement.play()
-    }
-
-    const onCardUnhover = () => {
-        console.log(props)
-        const audioElement = document.getElementById(props.uri)
-        audioElement.pause()
-    }
-
+    const onCardHover = () => document.getElementById(props.uri).play()
+    const onCardUnhover = () => document.getElementById(props.uri).pause()
 
     return (
     <ButtonBase>
@@ -36,8 +27,8 @@ const songCard = (props) => {
                     {props.artist}
                     </Typography>
 
-                    <Typography noWrap={true} color="white" marginTop="10px" marginLeft="20px">
-                        Added on {props.addedOn}
+                    <Typography noWrap={true} color="white" marginTop="10px" >
+                        {props.preview_url ? <MusicNoteIcon style={{marginBottom: "0"}}/> :  <></>} Added on {props.addedOn}
                     </Typography>
                 </CardContent>
                 </Grid>
