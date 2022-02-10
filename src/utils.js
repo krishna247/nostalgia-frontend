@@ -10,10 +10,12 @@ export const  getCookie = (name) => {
 }
 export const compareYear = (row,yearsVal) => {
 
-    const minYear = yearsVal[0]
-    const maxYear = yearsVal[1]
+    // const minYear = yearsVal[0]
+    // const maxYear = yearsVal[1]
     let currentYear = "2" + new Date(Number(row['addedAt'])).getYear() -100
-    return currentYear >= minYear && currentYear <= maxYear
+    // console.log("Current year:"+currentYear)
+    return yearsVal.includes(Number(currentYear))
+    // return currentYear >= minYear && currentYear <= maxYear
 };
 
 export const modifyRows = (row) => {

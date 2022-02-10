@@ -6,3 +6,16 @@
 /*.MuiTouchRipple-root.css-8je8zh-MuiTouchRipple-root{*/
 /*    color: #1DB954;*/
 /*}*/
+
+.css-d9c359-MuiButtonBase-root-MuiToggleButton-root{
+    border-color: #1DB954 !important;
+    /*border-width: 2.5px !important;*/
+}
+
+.css-d9c359-MuiButtonBase-root-MuiToggleButton-root[aria-pressed="false"]{
+    color:white !important;
+}
+
+.css-d9c359-MuiButtonBase-root-MuiToggleButton-root[aria-pressed="true"]{
+    color:#1DB954 !important;
+}
