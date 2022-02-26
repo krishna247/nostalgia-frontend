@@ -1,3 +1,39 @@
 body {
   background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+h5{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.songBox{
+    margin-left: 5%;
+    width:90%;
+  }
+
+.songFontBig{
+  font-size: 16px !important;
+}
+.songFontSmall{
+  font-size: 14px !important;
+}
+
+@media screen and (min-width: 900px) {
+.songBox{
+  width:32%;
+  margin-left: 0%;
+}
+  .songFontBig{
+    font-size: 22px !important;
+  }
+
+  .songFontSmall{
+    font-size: 18px !important;
+  }
+
+
 }

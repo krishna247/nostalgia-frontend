@@ -1,11 +1,11 @@
-/*.css-ovja5t-MuiButtonBase-root-MuiToggleButton-root.Mui-selected{*/
-/*    !*background-color: #1DB954 !important;*!*/
-/*    color: white*/
-/*}*/
+.css-ovja5t-MuiButtonBase-root-MuiToggleButton-root.Mui-selected{
+    /*background-color: #1DB954 !important;*/
+    color: white !important;
+}
 
-/*.MuiTouchRipple-root.css-8je8zh-MuiTouchRipple-root{*/
-/*    color: #1DB954;*/
-/*}*/
+.MuiTouchRipple-root.css-8je8zh-MuiTouchRipple-root{
+    color: #1DB954 !important;
+}
 
 .css-d9c359-MuiButtonBase-root-MuiToggleButton-root{
     border-color: #1DB954 !important;

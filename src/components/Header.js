@@ -15,7 +15,7 @@ const Header = (props) => {
             </Box>
             <img src={spotifyLogo} style={{maxWidth: "20%", height: "20%", paddingRight:"16px"}}/>
         </Stack>
-                <Box sx={{fontFamily: 'Roboto Slab', fontSize: 25, color: "#1DB954",textUnderlineOffset:"4"}}>
+                <Box component={"span"} sx={{fontFamily: 'Roboto Slab', fontSize: 25, color: "#1DB954",textUnderlineOffset:"4"}}>
                     <span style = {{borderBottom: "1px solid currentColor",lineHeight: 0.8}}>
                     Rediscover old songs by choosing a timeline
                         </span>
