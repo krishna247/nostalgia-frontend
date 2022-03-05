@@ -13,7 +13,7 @@ const CardsBox = (props) => {
             .then(data => data.sort( (a,b) => a.addedAt > b.addedAt ).reverse())
             .then(data => data.map(modifyRows))
             .then((data) => setCardContentsBase(data))
-    },[])
+    },[fetchURL])
 
     useEffect( () => {
         setCardContents(cardContentsBase.filter(row => compareYear(row,props.yearsVal)))
