@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 import {checkIsLocal} from "../utils";
 
 const getSpotifyUserLogin = () => {
-    const authURL = checkIsLocal() ? "http://localhost:8080/auth" : "http://3.65.240.94:8080/auth"
+    const authURL = checkIsLocal() ? "http://localhost:8080/auth" : "http://krishnaj.me/auth"
     fetch(authURL)
         .then((response) => response.text())
         .then(response => {
