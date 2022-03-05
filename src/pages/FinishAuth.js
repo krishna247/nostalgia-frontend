@@ -19,7 +19,7 @@ const FinishAuth = () => {
     const code  = searchParams.get("access_token")
     console.log(`access_token: ${code}`)
     setCookie('access_token',code,1)
-    const redirectURL = checkIsLocal() ? "http://localhost:3000" : "http://3.65.240.94:3080"
+    const redirectURL = checkIsLocal() ? "http://localhost:3000" : "http://krishnaj.me/"
     window.location.replace(redirectURL);
     return null;
 }

@@ -1,18 +1,19 @@
 import {useEffect, useState} from "react";
-import {compareYear, modifyRows} from "../utils";
+import {checkIsLocal, compareYear, modifyRows} from "../utils";
 import SongBox from "./SongBox";
 
 const CardsBox = (props) => {
     const [cardContentsBase, setCardContentsBase] = useState([])
     const [cardContents, setCardContents] = useState([])
 
+    const fetchURL = checkIsLocal() ? "http://localhost:8080/saved-tracks" : "http://krishnaj.me/saved-tracks"
     useEffect(() => {
-        fetch("http://localhost:8080/saved-tracks", {credentials: "include"})
+        fetch(fetchURL, {credentials: "include"})
             .then((data) => data.json())
-            .then(data => data.sort( (a,b) => a.addedAt > b.addedAt ))
+            .then(data => data.sort( (a,b) => a.addedAt > b.addedAt ).reverse())
             .then(data => data.map(modifyRows))
             .then((data) => setCardContentsBase(data))
-    }, [])
+    })
 
     useEffect( () => {
         setCardContents(cardContentsBase.filter(row => compareYear(row,props.yearsVal)))
